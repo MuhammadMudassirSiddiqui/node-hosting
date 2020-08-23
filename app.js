@@ -7,6 +7,8 @@ hbs.registerPartials(__dirname + '/views/partials')
 hbs.registerHelper('getTime', () => {
     return new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds() + ' ' + new Date().toString()
 })
+
+var port = process.env.PORT || 3000
 app.set('view engine', 'hbs')
 
 app.get('/', (req, res) => {
@@ -26,6 +28,6 @@ app.get('/contect', (req, res) => {
         title: "Contect Page"
     })
 })
-app.listen(3000, () => {
-    console.log('you are listining on port 3000')
+app.listen(port, () => {
+    console.log(`you are listining on port ${port}`)
 })
